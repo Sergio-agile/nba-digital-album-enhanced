@@ -67,16 +67,75 @@
         <h3>No Albums yet - Get Started!</h3>
       </div>
 
+      <%# <% if current_user.albums.count > 0 %>
       <%# Dropdown menu %>
-      <div class="dropdown">
-        <button class="no-albums-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          Select a Season
-        </button>
-        <ul class="dropdown-menu no-albums-dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="albums/new">21/22</a></li>
-          <li><a class="dropdown-item" href="#">20/21</a></li>
-          <li><a class="dropdown-item" href="#">19/20</a></li>
-        </ul>
+      <div data-controller="album"
+           <%# data-game-subscription-user-id-value="%>
+           <%# current_user.id %>
+           data-album-user-id-value="<% current_user.id %>">
+           <%# data-album-user-value="
+           <%# current_user %>
+
+
+        <div class="dropdown">
+          <button class="no-albums-button dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Select a Season
+          </button>
+          <ul class="dropdown-menu no-albums-dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <%# <li data-action="click->album#createAlbum"><a class="dropdown-item" href="albums/new">21/22</a></li> %>
+            <%# <li data-action="click->album#createAlbum2021"><a class="dropdown-item" href="#">21/22</a></li>
+            <li data-action="click->album#createAlbum2020"><a class="dropdown-item" href="#">20/21</a></li>
+            <li data-action="click->album#createAlbum2019"><a class="dropdown-item" href="#">19/20</a></li> %>
+            <%# <div><li><a <% current_user.albums.create(season: "2021") %>
+            <%# class="dropdown-item" href="#">21/22</a></li></div> %>
+            <%# <div data-album-target="button" id="quiz-result-message"> %>
+            <%# <div id="tasks"> %>
+            <%# <div id="tasks"> %>
+              <li><a class="dropdown-item" href="#">21/22</a></li>
+              <li data-action="click->album#createAlbum2020" ><a class="dropdown-item" href="#">20/21</a></li>
+              <%# <li data-action="click->album#createAlbum2020" id="tasks"><a class="dropdown-item" href="#">20/21</a></li> %>
+              <li ><a class="dropdown-item" href="#">19/20</a></li>
+            <%# </div> %>
+          </ul>
+          <%# <script> %>
+              <%# current_user_my = <%= current_user %>
+          <%# </script> %>
+          <%# <div data-album-target="input" id="quiz-result-message">
+          </div> %>
+          <%# <script> %>
+              <%# // nj = <% current_user.albums.create(season: "2021") %>
+          <%# </script> %>
+        </div>
+        <%# <div data-album-clicked-value > %>
+          <%# <% if data-album-clicked-value == 'true' %>
+            <%# <% current_user.albums.create(season: "2021") %>
+          <%# <% end %>
+        <%# </div> %>
+
+        <div data-target="album.input" >
+          <%# <div id="p1" > %>
+          <%# <span id="myspan"></span> %>
+          <%# <div id='message'> %>
+          <%# <% if 'message' %>
+            <%# <% <p>helloooooooooooo</p> %>
+            <%# <% current_user.albums.create(season: "2021") %>
+          <%# <% end %>
+          <%# </div id="p1"> %>
+          <%# <div data-album-clicked-value > %>
+          <%# <% if data-album-clicked-value %>
+          <%# <% if true %>
+
+          <%# <p>run erb in js <%= @lesson %>
+          <%# <p data-target="album.input"></p> %>
+            <%# <span data-target="album.input"></span> %>
+            <%# <%= @clicked %>
+            <%# <p>helloooooooooooo <%= album_clicked_value.to_s %>
+            <%# <p>helloooooooooooo <%= data-album-clicked-value %>
+            <%# <% current_user.albums.create(season: "2021") %>
+          <%# <% end %>
+          <%# <% current_user.albums.create(season: "2021") %>
+          <%# <p>Test</p> %>
+        </div>
       </div>
 
     </div>
